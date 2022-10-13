@@ -2,8 +2,8 @@ namespace WORLDGAMEDEVELOPMENT
 {
     public sealed class ManagerPath
     {
-        public const string CANVASDATA = "Canvas";
-
+        public const string CANVAS = "Canvas";
+        public const string CANVASDATA = "CanvasData";
         public const string DATA = "Data";
     }
 }
