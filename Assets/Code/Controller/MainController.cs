@@ -21,11 +21,23 @@ public sealed class MainController : MonoBehaviour
     private void Awake()
     {
         _camera = Camera.main;
+        _controller = new Controller();
+
         _data = Resources.Load<Data>(Path.Combine(ManagerPath.DATA, ManagerPath.DATA));
         if (_data == null) _data = Resources.Load<Data>(_dataPath);
 
         var canvasFactory = new CanvasFactory(_data.CanvasData);
         var canvasController = new CanvasController(canvasFactory.CreateCanvasModel());
+
+        var cubeFactory = new CubeFactory(_data.CubeData);
+        var cubeController = new CubeController(cubeFactory.GetCubeModel());
+
+        _controller.Add(cubeController);
+    }
+
+    private void Start()
+    {
+        _controller.Initialization();
     }
 
     #endregion

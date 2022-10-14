@@ -10,8 +10,10 @@ namespace WORLDGAMEDEVELOPMENT
         #region Fields
 
         [SerializeField] private string _canvasDataPath;
+        [SerializeField] private string _cubeDataPath;
 
         private CanvasData _canvasData;
+        private CubeData _cubeData;
 
         #endregion
 
@@ -34,6 +36,22 @@ namespace WORLDGAMEDEVELOPMENT
             }
         }
 
+
+        public CubeData CubeData
+        {
+            get
+            {
+                if (_cubeData == null)
+                {
+                    _cubeData = Resources.Load<CubeData>(Path.Combine(ManagerPath.DATA, ManagerPath.CUBEDATA));
+                }
+                if (_cubeData == null)
+                {
+                    _cubeData = Resources.Load<CubeData>(Path.Combine(_cubeDataPath));
+                }
+                return _cubeData;
+            }
+        }
         #endregion
     }
 }

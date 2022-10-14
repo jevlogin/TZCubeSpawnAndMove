@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5890c8cd9cb0304da44e1e5d9947cd1, type: 3}
-  m_Name: Data
+  m_Script: {fileID: 11500000, guid: 23b378ad32b6952418d2a3ce09d2cbf8, type: 3}
+  m_Name: CubeData
   m_EditorClassIdentifier: 
-  _canvasDataPath: Data/Canvas/CanvasData
-  _cubeDataPath: Data/Cube/CubeData
+  _cubeStruct:
+    _prefab: {fileID: 2784029120358895355, guid: 8193bfdaad8407341a32fd21d64bc664, type: 3}
+  _cubeComponents:
+    CubeTransform: {fileID: 0}
+    CubeTransforms: []

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-internal sealed class Controller : IInitialization
+internal sealed class Controller : IInitialization, IExecute, ICleanup, IDisposable
 {
     #region Fields
 
