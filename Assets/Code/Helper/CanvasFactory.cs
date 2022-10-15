@@ -30,7 +30,9 @@ internal sealed class CanvasFactory
         {
             var canvasStruct = _canvasData.CanvasStruct;
             var canvasSpawn = Object.Instantiate(_canvasData.CanvasStruct.Prefab);
-            _canvasModel = new CanvasModel(canvasStruct);
+            var canvasComponents = _canvasData.CanvasComponents;
+            canvasComponents.CanvasView = canvasSpawn.GetComponentInChildren<CanvasView>();
+            _canvasModel = new CanvasModel(canvasStruct, canvasComponents);
         }
         return _canvasModel;
     }

@@ -28,6 +28,8 @@ public sealed class MainController : MonoBehaviour
 
         var canvasFactory = new CanvasFactory(_data.CanvasData);
         var canvasController = new CanvasController(canvasFactory.CreateCanvasModel());
+        _controller.Add(canvasController);
+
 
         var cubeFactory = new CubeFactory(_data.CubeData);
         var cubeController = new CubeController(cubeFactory.GetCubeModel());

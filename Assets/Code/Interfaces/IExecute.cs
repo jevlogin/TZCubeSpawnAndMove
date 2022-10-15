@@ -1,4 +1,4 @@
-﻿internal interface IExecute : IController
+﻿internal interface IExecute : IInitialization
 {
     void Execute(float deltaTime);
 }

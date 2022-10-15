@@ -8,6 +8,7 @@ namespace WORLDGAMEDEVELOPMENT
     {
         #region Fields
 
+        [SerializeField] private CanvasComponents _canvasComponents;
         [SerializeField] private CanvasStruct _canvasStruct;
 
         #endregion
@@ -15,6 +16,7 @@ namespace WORLDGAMEDEVELOPMENT
 
         #region Properties
 
+        public CanvasComponents CanvasComponents => _canvasComponents;
         public CanvasStruct CanvasStruct => _canvasStruct;
 
         #endregion

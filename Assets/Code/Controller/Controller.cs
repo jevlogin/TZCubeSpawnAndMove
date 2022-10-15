@@ -28,7 +28,7 @@ internal sealed class Controller : IInitialization, IExecute, ICleanup, IDisposa
 
     #region Methods
 
-    public Controller Add(IController controller)
+    public Controller Add(IInitialization controller)
     {
         if (controller is IInitialization initialization)
         {

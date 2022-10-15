@@ -1,4 +1,4 @@
-﻿internal interface ICleanup : IController
+﻿internal interface ICleanup : IInitialization
 {
     void Cleanup();
 }
