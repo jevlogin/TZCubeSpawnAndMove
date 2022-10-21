@@ -15,7 +15,7 @@ MonoBehaviour:
   _canvasComponents:
     CanvasView: {fileID: 0}
   _canvasStruct:
-    Speed: 2
-    Distance: 10
-    TimeInterval: 2
+    Speed: 7
+    Distance: 12
+    TimeInterval: 3
     _prefab: {fileID: 3375867800208740368, guid: dadf840fc923c554a90d7017a77ccf5e, type: 3}
