@@ -24,14 +24,19 @@ internal sealed class CanvasFactory
 
     #region Methods
 
-    internal CanvasModel CreateCanvasModel()
+    internal CanvasModel GetCanvasModel()
     {
         if (_canvasModel == null)
         {
             var canvasStruct = _canvasData.CanvasStruct;
             var canvasSpawn = Object.Instantiate(_canvasData.CanvasStruct.Prefab);
             var canvasComponents = _canvasData.CanvasComponents;
+            
             canvasComponents.CanvasView = canvasSpawn.GetComponentInChildren<CanvasView>();
+            canvasComponents.CanvasView.InputFieldSpeed.text = canvasStruct.Speed.ToString();
+            canvasComponents.CanvasView.InputFieldDistance.text = canvasStruct.Distance.ToString();
+            canvasComponents.CanvasView.InputFieldTimeInterval.text = canvasStruct.TimeInterval.ToString();
+
             _canvasModel = new CanvasModel(canvasStruct, canvasComponents);
         }
         return _canvasModel;

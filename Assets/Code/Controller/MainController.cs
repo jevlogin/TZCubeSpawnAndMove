@@ -27,13 +27,11 @@ public sealed class MainController : MonoBehaviour
         if (_data == null) _data = Resources.Load<Data>(_dataPath);
 
         var canvasFactory = new CanvasFactory(_data.CanvasData);
-        var canvasController = new CanvasController(canvasFactory.CreateCanvasModel());
+        var canvasController = new CanvasController(canvasFactory.GetCanvasModel());
         _controller.Add(canvasController);
 
-
         var cubeFactory = new CubeFactory(_data.CubeData);
-        var cubeController = new CubeController(cubeFactory.GetCubeModel());
-
+        var cubeController = new CubeController(cubeFactory.GetCubeModel(), canvasFactory.GetCanvasModel());
         _controller.Add(cubeController);
     }
 

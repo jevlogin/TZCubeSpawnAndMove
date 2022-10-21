@@ -10,6 +10,8 @@ namespace WORLDGAMEDEVELOPMENT
         #region Fields
 
         [SerializeField] private GameObject _prefab;
+        internal Vector3 StartPosition;
+        internal Quaternion StartRotation;
 
         #endregion
 

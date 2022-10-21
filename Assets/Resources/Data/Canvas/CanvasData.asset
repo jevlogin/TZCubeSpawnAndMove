@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562e2eebcb7710849ba2ea5b147dd560, type: 3}
   m_Name: CanvasData
   m_EditorClassIdentifier: 
+  _canvasComponents:
+    CanvasView: {fileID: 0}
   _canvasStruct:
+    Speed: 2
+    Distance: 10
+    TimeInterval: 2
     _prefab: {fileID: 3375867800208740368, guid: dadf840fc923c554a90d7017a77ccf5e, type: 3}

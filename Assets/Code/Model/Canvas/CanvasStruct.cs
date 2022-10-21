@@ -9,6 +9,9 @@ namespace WORLDGAMEDEVELOPMENT
     {
         #region Fields
 
+        [SerializeField] internal float Speed;
+        [SerializeField] internal float Distance;
+        [SerializeField] internal float TimeInterval;
         [SerializeField] private GameObject _prefab;
 
         #endregion

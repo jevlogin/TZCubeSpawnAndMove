@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-internal sealed class Controller : IInitialization, IExecute, ICleanup, IDisposable
+
+internal sealed class Controller : IInitialization, IDisposable
 {
     #region Fields
 
     private readonly List<IDisposable> _disposableControllers;
     private readonly List<IInitialization> _initializationControllers;
-    private readonly List<IExecute> _executeControllers;
-    private readonly List<ICleanup> _cleanupControllers;
 
     #endregion
 
@@ -19,8 +18,6 @@ internal sealed class Controller : IInitialization, IExecute, ICleanup, IDisposa
     {
         _disposableControllers = new List<IDisposable>();
         _initializationControllers = new List<IInitialization>();
-        _executeControllers = new List<IExecute>();
-        _cleanupControllers = new List<ICleanup>();
     }
 
     #endregion
@@ -34,32 +31,11 @@ internal sealed class Controller : IInitialization, IExecute, ICleanup, IDisposa
         {
             _initializationControllers.Add(initialization);
         }
-        if (controller is IExecute execute)
-        {
-            _executeControllers.Add(execute);
-        }
-        if (controller is ICleanup cleanup)
-        {
-            _cleanupControllers.Add(cleanup);
-        }
         if (controller is IDisposable disposable)
         {
             _disposableControllers.Add(disposable);
         }
         return this;
-    }
-
-    #endregion
-
-
-    #region ICleanup
-
-    public void Cleanup()
-    {
-        for (int i = 0; i < _cleanupControllers.Count; i++)
-        {
-            _cleanupControllers[i].Cleanup();
-        }
     }
 
     #endregion
@@ -72,19 +48,6 @@ internal sealed class Controller : IInitialization, IExecute, ICleanup, IDisposa
         for (int i = 0; i < _disposableControllers.Count; i++)
         {
             _disposableControllers[i].Dispose();
-        }
-    }
-
-    #endregion
-
-
-    #region IExecute
-
-    public void Execute(float deltaTime)
-    {
-        for (int i = 0; i < _executeControllers.Count; i++)
-        {
-            _executeControllers[i].Execute(deltaTime);
         }
     }
 
